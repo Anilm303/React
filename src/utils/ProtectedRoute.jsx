@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProtectedRoute = () => {
 
-    const isAuthenticated = false
+    const isAuthenticated = true
   return !isAuthenticated && <Navigate to='/'/>
 }
 

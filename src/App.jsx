@@ -50,19 +50,25 @@ import SingleProductPages from './pages/SingleProductPages'
 import NotFoundPages from './pages/NotFoundPages'
 import ProtectedRoute from './utils/ProtectedRoute'
 import LoginPages from './pages/LoginPages'
+import MainLayout from './utils/MainLayout'
 
 const App = () => {
   return (
     <div>
       <NavBar/>
       <Routes>
-        <Route path='/' element={<HomePages/>}/>
-        <Route path='/products' element={<ProductPages/>}/>
-    
-        <Route element={<ProtectedRoute/>}>
+        <Route element={<MainLayout/>}>
+          <Route path='/' element={<HomePages/>}/>
+          <Route path='/products' element={<ProductPages/>}/>  
+          <Route path='/products/:id' element={<SingleProductPages/>} />
+
+          <Route element={<ProtectedRoute/>}>
               <Route path='/cart' element={<CartPages/>}/>
+        </Route>    
         </Route>
-        <Route path='/products/:id' element={<SingleProductPages/>} />
+
+        
+        
 
          <Route path='/login' element={<LoginPages/>} />
        {/* error massage */}
