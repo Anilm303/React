@@ -9,10 +9,11 @@ const HomePages = () => {
 
   const dispatch = useDispatch()
 
-  const {user} = useSelector(state => state.auth)
+  const {user, isAuthenticated} = useSelector(state => state.auth)
+  console.log(isAuthenticated)
 
   const login = () =>{
-    dispatch(loginSucess('Anil magar'))
+    dispatch(loginSucess('ram magar'))
   }
   return (
 
@@ -26,6 +27,9 @@ const HomePages = () => {
     <div>
       <button onClick={login} className='bg-teal-700 text-white px-4 py-2 rounded-b-md cursor-pointer'> login</button>
     </div>
+    <p>
+      {isAuthenticated ? "user is loggin" : "user is not loggin"}
+    </p>
     </div>
   )
 }
