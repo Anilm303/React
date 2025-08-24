@@ -1,12 +1,20 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import {BrowserRouter} from 'react-router-dom'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { CounterProvider } from "./context/CounterContext";
+import App from "./App";
+import "./index.css"; // <-- THIS IS CRUCIAL for Tailwind
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
-createRoot(document.getElementById('root')).render(
-<BrowserRouter>
-<App />
-</BrowserRouter>
-  
-)
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Provider store={store}>
+        <CounterProvider>
+        <App />
+      </CounterProvider>
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>
+);

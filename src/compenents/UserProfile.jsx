@@ -1,4 +1,4 @@
-import UserAddress from "./userAddress"
+import UserAddress from "./UserAddress"
 
 const UserProfile = (props) => {
     return (

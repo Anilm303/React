@@ -53,6 +53,7 @@ import LoginPages from './pages/LoginPages'
 import MainLayout from './utils/MainLayout'
 
 const App = () => {
+  
   return (
     <div>
       <NavBar/>
@@ -66,10 +67,6 @@ const App = () => {
               <Route path='/cart' element={<CartPages/>}/>
         </Route>    
         </Route>
-
-        
-        
-
          <Route path='/login' element={<LoginPages/>} />
        {/* error massage */}
        <Route path='*' element={<NotFoundPages/>} />
