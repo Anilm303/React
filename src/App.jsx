@@ -51,6 +51,8 @@ import NotFoundPages from './pages/NotFoundPages'
 import ProtectedRoute from './utils/ProtectedRoute'
 import LoginPages from './pages/LoginPages'
 import MainLayout from './utils/MainLayout'
+import Products from './pages/Products'
+import ProductDetailPage from './pages/ProductDetailPage'
 
 const App = () => {
   
@@ -60,8 +62,8 @@ const App = () => {
       <Routes>
         <Route element={<MainLayout/>}>
           <Route path='/' element={<HomePages/>}/>
-          <Route path='/products' element={<ProductPages/>}/>  
-          <Route path='/products/:id' element={<SingleProductPages/>} />
+          <Route path='/products' element={<Products/>}/>  
+          <Route path='/products/:id' element={<ProductDetailPage/>} />
 
           <Route element={<ProtectedRoute/>}>
               <Route path='/cart' element={<CartPages/>}/>
