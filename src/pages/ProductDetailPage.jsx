@@ -10,7 +10,7 @@ const ProductDetailPage = () => {
     queryKey: ["product", id],
     queryFn: async () => {
       const response = await axios.get(
-        `https://api.escuelajs.co/api/v1/products/${id}`
+        `https://api.escuelajs.co/ausepi/v1/products/${id}`
       );
       return response.data;
     },

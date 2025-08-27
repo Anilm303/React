@@ -34,6 +34,11 @@ const Navbar = () => {
             <Link to="/login">
               <li></li>
             </Link>
+            <Link to="/login">
+            <li>
+              <button>login</button>
+            </li>
+            </Link>
 
             {isAuthenticated ? (
               <>
@@ -46,12 +51,6 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <li>
-                  <button className="border border-slate-600 px-4 py-2 rounded-md">
-                    login
-                  </button>
-                </li>
-
                 <li>
                   <button className="border border-slate-600 px-4 py-2 rounded-md">
                     register
